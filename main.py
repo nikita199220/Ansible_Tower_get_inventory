@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import requests
-import click
 import json
 
 
@@ -14,7 +13,7 @@ def get_token(user, passwd, tower_api_url):
 
 def get_inventories(token,  page_size=200):
     headers = {'Authorization': 'Bearer ' + token}
-    url = f'{tower_api_url}/inventories?&page_size={page_size}'
+    url = f'{tower_api_url}/hosts?&page_size={page_size}'
     response = requests.get(url, headers=headers, verify=False)
     response.raise_for_status()
     return response.json()
@@ -31,9 +30,9 @@ def cleanup_hosts(token, page_size=200):
         counter -= 1
     return counter
    
-user="bbdjshbhjb"
-passwd="vdjvjd"
-tower_api_url=" "
+user="admin"
+passwd="abhijeet@123"
+tower_api_url="https://10.1.150.2/api/v2"
 token = get_token(user, passwd, tower_api_url)
 page_size=200
 inventories = cleanup_hosts(token=token, page_size=page_size)
