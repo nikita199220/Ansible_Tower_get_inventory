@@ -31,8 +31,8 @@ def cleanup_hosts(token, page_size=200):
     return counter
    
 user="admin"
-passwd="abhijeet@123"
-tower_api_url="https://10.1.150.2/api/v2"
+passwd="hbdhj"
+tower_api_url="https://jhdbchj/api/v2"
 token = get_token(user, passwd, tower_api_url)
 page_size=200
 inventories = cleanup_hosts(token=token, page_size=page_size)
